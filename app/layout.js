@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-
+import "regenerator-runtime" 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

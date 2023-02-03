@@ -42,9 +42,9 @@ export const COLUMNS = [
     accessor: 'email'
   },
   {
-    Header: 'Age',
-    Footer: 'Age',
-    accessor: 'age'
+    Header: 'Price',
+    Footer: 'Price',
+    accessor: 'Price'
   },
 ]
 

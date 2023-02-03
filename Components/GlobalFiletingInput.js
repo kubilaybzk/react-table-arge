@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useAsyncDebounce } from "react-table";
-
+import "regenerator-runtime" 
 export const GlobalFiletingInput = ({ filter, setFilter }) => {
   const [value, setValue] = useState(filter);
-  //   const onChange = useAsyncDebounce(value => {
-  //     setFilter(value || undefined)
-  //   }, 1000)
+    const onChange = useAsyncDebounce(value => {
+      setFilter(value || undefined)
+    }, 1000)
   return (
     <div className="mb-20 w-full bg-yellow-100 flex flex-col items-start justify-start">
       <h1>Search Components</h1>
@@ -16,7 +16,7 @@ export const GlobalFiletingInput = ({ filter, setFilter }) => {
           value={filter || ""}
           onChange={(e) => {
             setFilter(e.target.value);
-            //onChange(e.target.value);
+            onChange(e.target.value);
           }}
         />
       </span>
