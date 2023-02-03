@@ -56,6 +56,9 @@ export default function HomePage() {
           <Link href={"/StickyColumns"}>
             <span className="hover:text-blue-300">Sticky Columns</span>
           </Link>
+          <Link href={"/All_in_one"}>
+            <span className="hover:text-blue-300">All_in_one</span>
+          </Link>
 
          
         </div>

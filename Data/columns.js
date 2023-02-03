@@ -1,4 +1,5 @@
 import { format } from 'date-fns'
+import Link from 'next/link'
 import {ColumnFileringInput} from '../Components/ColumnFileringInput'
 
 export const COLUMNS = [
@@ -22,7 +23,7 @@ export const COLUMNS = [
     sticky: 'left'
   },
   {
-    Header: 'Date of Birth',
+    Header: 'Id',
     Footer: 'Date of Birth',
     accessor: 'date_of_birth',
   },
@@ -202,6 +203,68 @@ export const Column_filter = [
   }
 ]
 
+export const COLUMNS_FINAL = [
+  
+  {
+    Header: 'First Name',
+    Footer: 'First Name',
+    accessor: 'first_name',
+    sticky: 'left'
+  },
+  {
+    Header: 'Last Name',
+    Footer: 'Last Name',
+    accessor: 'last_name',
+    sticky: 'left'
+  },
+  {
+    Header: 'Date of Birth',
+    Footer: 'Date of Birth',
+    accessor: 'date_of_birth',
+    Cell: ({ value }) => {
+      return format(new Date(value), 'dd/MM/yyyy')}
+    
+  },
+  {
+    Header: 'Country',
+    Footer: 'Country',
+    accessor: 'country'
+  },
+  {
+    Header: 'Phone',
+    Footer: 'Phone',
+    accessor: 'phone',
+    Cell: ({ value }) => {
+      return formatPhoneNumber(value)}
+    
+  
+  },
+  {
+    Header: 'Email',
+    Footer: 'Email',
+    accessor: 'email'
+  },
+  {
+    Header: 'Price',
+    Footer: 'Price',
+    accessor: 'Price'
+  },
+  {
+    Header: 'Id',
+    Footer: 'Id',
+    accessor: 'id',
+
+    Cell: ({ value }) => {
+      return <Link href={`/detay/${value}`}>
+        <div className='bg-red-200 px-5 '>
+          Detay
+        </div>
+      </Link>},
+        disableFilters:true,
+        disableSortBy:true
+    
+  }
+]
 
 
 function formatPhoneNumber(phoneNumberString) {
