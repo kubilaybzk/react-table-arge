@@ -56,6 +56,8 @@ export default function HomePage() {
           <Link href={"/StickyColumns"}>
             <span className="hover:text-blue-300">Sticky Columns</span>
           </Link>
+
+         
         </div>
       </div>
     </>
